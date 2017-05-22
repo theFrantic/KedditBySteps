@@ -25,7 +25,17 @@ class NewsFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        news_list.setHasFixedSize(true)
-        news_list.layoutManager = LinearLayoutManager(context)
+        newList.setHasFixedSize(true)
+        newList.layoutManager = LinearLayoutManager(context)
     }
+
+
+    //region Private Methods
+
+    private val newList by lazy {
+        news_list
+    }
+
+    //endregion
+
 }
