@@ -11,7 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.whilchy.kedditbysteps.R
-import com.whilchy.kedditbysteps.commons.inflate
+import com.whilchy.kedditbysteps.commons.extensions.inflate
 import com.whilchy.kedditbysteps.features.news.adapter.NewsAdapter
 
 import kotlinx.android.synthetic.main.news_fragment.*

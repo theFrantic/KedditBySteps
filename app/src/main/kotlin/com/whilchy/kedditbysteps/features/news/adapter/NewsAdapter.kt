@@ -3,10 +3,7 @@ package com.whilchy.kedditbysteps.features.news.adapter
 import android.support.v4.util.SparseArrayCompat
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
-import com.whilchy.kedditbysteps.commons.adapter.AdapterConstants
-import com.whilchy.kedditbysteps.commons.adapter.LoadingDelegateAdapter
-import com.whilchy.kedditbysteps.commons.adapter.ViewType
-import com.whilchy.kedditbysteps.commons.adapter.ViewTypeDelegateAdapter
+import com.whilchy.kedditbysteps.commons.adapter.*
 
 /**
  * Created by daniel on 23/05/17.
@@ -21,6 +18,7 @@ class NewsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     init {
         delegateAdapters.put(AdapterConstants.LOADING, LoadingDelegateAdapter())
+        delegateAdapters.put(AdapterConstants.NEWS, NewsDelegateAdapter())
         items = ArrayList()
         items.add(loadingItem)
     }
