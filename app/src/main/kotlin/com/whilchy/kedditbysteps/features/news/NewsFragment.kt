@@ -7,12 +7,12 @@ package com.whilchy.kedditbysteps.features.news
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.whilchy.kedditbysteps.R
 import com.whilchy.kedditbysteps.commons.inflate
+import com.whilchy.kedditbysteps.features.news.adapter.NewsAdapter
 
 import kotlinx.android.synthetic.main.news_fragment.*
 
@@ -27,6 +27,8 @@ class NewsFragment : Fragment() {
 
         newList.setHasFixedSize(true)
         newList.layoutManager = LinearLayoutManager(context)
+
+        initAdapter()
     }
 
 
@@ -34,6 +36,12 @@ class NewsFragment : Fragment() {
 
     private val newList by lazy {
         news_list
+    }
+
+    private fun initAdapter() {
+        if (newList.adapter == null) {
+            newList.adapter = NewsAdapter()
+        }
     }
 
     //endregion
