@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.whilchy.kedditbysteps.R
+import com.whilchy.kedditbysteps.commons.RedditNewsItem
 import com.whilchy.kedditbysteps.commons.extensions.inflate
 import com.whilchy.kedditbysteps.features.news.adapter.NewsAdapter
 
@@ -29,6 +30,21 @@ class NewsFragment : Fragment() {
         newList.layoutManager = LinearLayoutManager(context)
 
         initAdapter()
+
+        if (savedInstanceState == null) {
+            val news = mutableListOf<RedditNewsItem>()
+            for (i in 1..10) {
+                news.add(RedditNewsItem(
+                        "author$i",
+                        "Title $i",
+                        i,
+                        1457207701L - i * 200, // time
+                        "http://lorempixel.com/200/200/technics/$i",
+                        "url"
+                ))
+            }
+            (news_list.adapter as NewsAdapter).addNews(news)
+        }
     }
 
 
